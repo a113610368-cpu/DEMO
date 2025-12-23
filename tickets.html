@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>探索熱門票券行程 | 旅遊趣 Wanderlust</title>
+    <title>熱門票券行程 | 旅遊趣 Wanderlust</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .ticket-card { transition: 0.3s; border: none; border-radius: 20px; overflow: hidden; }
-        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important; }
-        .ticket-img-container { width: 100%; max-width: 250px; height: 180px; overflow: hidden; border-radius: 15px; }
-        .ticket-img-container img { width: 100%; height: 100%; object-fit: cover; background-color: #f0f0f0; }
-        /* 確保按鈕在最上層可被點擊 */
-        .btn-select { position: relative; z-index: 10; }
+        :root { --primary-blue: #0066cc; }
+        .ticket-card { transition: 0.3s; border: none; border-radius: 20px; overflow: hidden; background: white; }
+        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important; }
+        .ticket-img-container { width: 100%; max-width: 280px; height: 200px; overflow: hidden; border-radius: 15px; position: relative; }
+        .ticket-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .rating { color: #ffc107; font-size: 0.9rem; }
+        .sales-tag { position: absolute; top: 10px; left: 10px; font-size: 0.75rem; padding: 4px 8px; border-radius: 5px; z-index: 2; }
     </style>
 </head>
 <body class="bg-light">
@@ -21,72 +22,105 @@
             <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
             <div class="ms-auto">
                 <a href="index.html" class="btn btn-outline-secondary btn-sm">返回首頁</a>
-                <a href="tickets.html" class="btn btn-primary btn-sm ms-2">票券行程</a>
+                <a href="free-trip.html" class="btn btn-outline-primary btn-sm ms-2">自由行</a>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5 text-center">
-        <h2 class="fw-bold mb-3">探索熱門票券行程</h2>
-        <p class="text-muted mb-5">即買即用，電子憑證快速入場，讓您的行程安排更彈性。</p>
-
-        <div class="d-flex justify-content-center gap-2 mb-5">
-            <button class="btn btn-primary rounded-pill px-4">全部</button>
-            <button class="btn btn-outline-secondary rounded-pill px-4">樂園門票</button>
-            <button class="btn btn-outline-secondary rounded-pill px-4">交通接駁</button>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">熱門票券與在地體驗</h2>
+            <p class="text-muted">即買即用，電子憑證免排隊，享受最流暢的旅程。</p>
         </div>
 
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-10">
-                <div class="card ticket-card shadow-sm p-4">
+            
+            <div class="col-lg-11">
+                <div class="card ticket-card shadow-sm p-3">
                     <div class="d-flex align-items-center flex-column flex-md-row text-start">
                         <div class="ticket-img-container mb-3 mb-md-0">
+                            <span class="badge bg-danger sales-tag">今日熱銷 Top 1</span>
                             <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=600&q=80" alt="JR Pass">
                         </div>
                         <div class="ms-md-4 flex-grow-1">
-                            <span class="badge bg-info-subtle text-info mb-2">交通票券</span>
-                            <h5 class="fw-bold fs-4">JR Pass 全日本鐵路周遊券</h5>
-                            <p class="text-muted">7/14/21日，暢遊日本必備，搭乘新幹線首選。</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <h4 class="text-danger fw-bold mb-0">NT$ 11,500 <small class="fs-6 text-muted">/人</small></h4>
-                                <button class="btn btn-primary rounded-pill px-4 btn-select" onclick="alert('已選購！')">立即選購</button>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-primary-subtle text-primary mb-2">交通票券</span>
+                                <div class="rating">★ 4.9 <span class="text-muted">(2,450+ 評價)</span></div>
+                            </div>
+                            <h4 class="fw-bold mb-2">JR Pass 全日本鐵路周遊券 (7/14/21日)</h4>
+                            <p class="text-muted small mb-3">
+                                📍 日本全境適用 | ⚡ 電子換票證 | 🚆 包含所有新幹線路線<br>
+                                暢遊日本各大城市的最划算選擇，一張票搞定全日交通。
+                            </p>
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div>
+                                    <span class="text-decoration-line-through text-muted small">原價 NT$ 12,500</span>
+                                    <h4 class="text-danger fw-bold mb-0">NT$ 11,500 <small class="fs-6 text-muted">/人</small></h4>
+                                </div>
+                                <button class="btn btn-primary rounded-pill px-4 fw-bold">立即選購</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-10 mt-4">
-                <div class="card ticket-card shadow-sm p-4">
+            <div class="col-lg-11 mt-4">
+                <div class="card ticket-card shadow-sm p-3">
                     <div class="d-flex align-items-center flex-column flex-md-row text-start">
                         <div class="ticket-img-container mb-3 mb-md-0">
+                            <span class="badge bg-warning text-dark sales-tag">快速通關</span>
                             <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=600&q=80" alt="Tokyo Skytree">
                         </div>
                         <div class="ms-md-4 flex-grow-1">
-                            <span class="badge bg-success-subtle text-success mb-2">在地體驗</span>
-                            <h5 class="fw-bold fs-4">東京晴空塔門票 (免排隊)</h5>
-                            <p class="text-muted">登上 450 公尺展望台，俯瞰整個東京絕美天際線。</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <h4 class="text-danger fw-bold mb-0">NT$ 650 <small class="fs-6 text-muted">/人</small></h4>
-                                <button class="btn btn-primary rounded-pill px-4 btn-select" onclick="alert('已選購！')">立即選購</button>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-success-subtle text-success mb-2">景點門票</span>
+                                <div class="rating">★ 4.8 <span class="text-muted">(1,820+ 評價)</span></div>
+                            </div>
+                            <h4 class="fw-bold mb-2">東京晴空塔門票 (免排隊電子票)</h4>
+                            <p class="text-muted small mb-3">
+                                📍 東京都墨田區 | 📱 掃碼入場 | 📸 最佳日落觀賞點<br>
+                                登上東京第一高塔，360度俯瞰關東平原，天氣好時還能看見富士山！
+                            </p>
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div>
+                                    <span class="text-decoration-line-through text-muted small">原價 NT$ 850</span>
+                                    <h4 class="text-danger fw-bold mb-0">NT$ 650 <small class="fs-6 text-muted">/人</small></h4>
+                                </div>
+                                <button class="btn btn-primary rounded-pill px-4 fw-bold">立即選購</button>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-5 py-5 border-top">
+            <h4 class="fw-bold mb-4 text-center">訂購說明</h4>
+            <div class="row text-start">
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">⚡ 快速確認</h6>
+                    <p class="small text-muted">訂購後將立即收到電子憑證，無需列印紙本。</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">📅 彈性使用</h6>
+                    <p class="small text-muted">大部分票券提供有效期內任一天使用之服務。</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">❌ 容易退改</h6>
+                    <p class="small text-muted">出發前 48 小時取消，可獲得全額退款保障。</p>
                 </div>
             </div>
         </div>
 
-        <nav class="mt-5">
-            <ul class="pagination justify-content-center">
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="index.html">回首頁</a></li>
-            </ul>
-        </nav>
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary rounded-pill px-5">回首頁查看更多行程</a>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <footer class="bg-dark text-light py-4 text-center">
+        <p class="small mb-0">© 2025 旅遊趣 Wanderlust Travel. 專業票券服務商</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
