@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東京城市探索 | 旅遊趣</title>
+    <title>東京地標一日遊 | 旅遊趣 Wanderlust</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .page-header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover; background-position: center; height: 350px;
-            display: flex; align-items: center; color: white; text-align: center;
+        .detail-header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; height: 40vh;
+            display: flex; align-items: center; color: white;
         }
-        .itinerary-step { border-left: 3px solid #0066cc; padding-left: 20px; margin-bottom: 25px; position: relative; }
     </style>
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+<body class="bg-light text-start">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
             <a href="index.html" class="btn btn-outline-secondary btn-sm">返回首頁</a>
         </div>
     </nav>
 
-    <header class="page-header"><div class="container"><h1 class="display-4 fw-bold">東京 5 天 4 夜城市探索</h1></div></header>
+    <header class="detail-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">東京地標精選一日遊</h1>
+            <p class="lead">從淺草寺到晴空塔，體驗傳統與現代的完美交織。</p>
+        </div>
+    </header>
 
-    <div class="container my-5 text-start">
+    <div class="container py-5">
         <div class="row">
             <div class="col-lg-8">
-                <h3 class="fw-bold mb-4">精選行程</h3>
-                <div class="itinerary-step">
-                    <h5 class="fw-bold text-primary">Day 1：抵達東京 - 探索新宿霓虹</h5>
-                    <p class="text-muted small">抵達後前往飯店 check-in，晚上在新宿品嚐在地拉麵。</p>
-                </div>
-                <div class="itinerary-step">
-                    <h5 class="fw-bold text-primary">Day 2：淺草寺、晴空塔文化之旅</h5>
-                    <p class="text-muted small">穿梭雷門仲見世通，登上晴空塔俯瞰東京全景。</p>
-                </div>
-                <div class="itinerary-step">
-                    <h5 class="fw-bold text-primary">Day 3：築地市場與銀座購物</h5>
-                    <p class="text-muted small">享受新鮮海鮮早午餐，午後在銀座精品街漫步。</p>
+                <h3 class="fw-bold mb-4">行程特色</h3>
+                <ul class="list-group list-group-flush shadow-sm rounded-3 mb-5">
+                    <li class="list-group-item p-3">🗼 包含東京晴空塔 450M 展望台免排隊門票。</li>
+                    <li class="list-group-item p-3">⛩️ 專業導遊陪同導覽淺草雷門與仲見世通。</li>
+                    <li class="list-group-item p-3">🍱 午餐享用道地江戶前壽司料理。</li>
+                </ul>
+                <h3 class="fw-bold mb-4">每日行程</h3>
+                <div class="accordion" id="itinerary">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#day1">第一天：地標探索</button></h2>
+                        <div id="day1" class="accordion-collapse collapse show"><div class="accordion-body">09:00 淺草寺集合、中午壽司饗宴、下午登上晴空塔。</div></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card border-0 shadow-sm p-4 sticky-top" style="top: 90px;">
-                    <h4 class="fw-bold text-primary">NT$ 18,900 <small class="text-muted">起</small></h4>
-                    <hr>
-                    <p class="small text-muted mb-4">費用包含：來回機票、新宿飯店 4 晚、旅遊責任險。</p>
-                    <button class="btn btn-primary w-100 py-3 fw-bold" onclick="alert('已加入諮詢單！')">立即報名</button>
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="card p-4 shadow-sm sticky-top" style="top: 100px;">
+                    <h4 class="text-danger fw-bold">NT$ 3,200 <small class="text-muted fs-6">/人</small></h4>
+                    <p class="small text-muted mb-4">費用包含：景點門票、專業導覽、特色午餐。</p>
+                    <a href="contact.html" class="btn btn-primary w-100 py-2 fw-bold">立即諮詢此行程</a>
                 </div>
             </div>
         </div>
