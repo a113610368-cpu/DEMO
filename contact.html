@@ -6,63 +6,112 @@
     <title>聯絡我們 | 旅遊趣 Wanderlust</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --primary-blue: #0066cc; }
+        :root { --primary-blue: #007bff; }
+        body { background-color: #f8f9fa; }
         .contact-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border: none;
+            margin-top: 50px;
         }
-        .contact-info-panel {
+        .info-section {
             background-color: var(--primary-blue);
             color: white;
-            padding: 40px;
+            padding: 60px 40px;
         }
-        .form-panel {
-            padding: 40px;
+        .form-section {
+            padding: 60px 40px;
         }
+        .contact-icon { width: 24px; margin-right: 15px; }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">聯絡我們</a></li>
-                </ul>
+            <div class="ms-auto">
+                <a href="index.html" class="btn btn-link text-decoration-none text-dark">首頁</a>
+                <a href="contact.html" class="btn btn-link text-decoration-none text-dark fw-bold">聯絡我們</a>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="card contact-card">
                     <div class="row g-0">
-                        <div class="col-md-5 contact-info-panel text-start">
+                        <div class="col-md-5 info-section text-start">
                             <h2 class="fw-bold mb-4">聯繫我們</h2>
-                            <p class="mb-5">有任何疑問嗎？歡迎透過以下方式聯絡我們。</p>
+                            <p class="mb-5 opacity-75">有任何疑問嗎？歡迎透過以下方式聯絡我們。</p>
                             
-                            <div class="mb-4">
-                                <h6 class="fw-bold">📍 地址</h6>
-                                <p class="small">台北市信義區旅遊路 123 號</p>
+                            <div class="mb-4 d-flex align-items-center">
+                                <span class="fs-4 me-3">📍</span>
+                                <div>
+                                    <div class="fw-bold">地址</div>
+                                    <div class="small opacity-75">台北市信義區旅遊路 123 號</div>
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <h6 class="fw-bold">📞 電話</h6>
-                                <p class="small">0800-000-000</p>
+                            <div class="mb-4 d-flex align-items-center">
+                                <span class="fs-4 me-3">📞</span>
+                                <div>
+                                    <div class="fw-bold">電話</div>
+                                    <div class="small opacity-75">0800-000-000</div>
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <h6 class="fw-bold">✉️ 信箱</h6>
-                                <p class="small">service@wanderlust.com</p>
+                            <div class="mb-4 d-flex align-items-center">
+                                <span class="fs-4 me-3">✉️</span>
+                                <div>
+                                    <div class="fw-bold">信箱</div>
+                                    <div class="small opacity-75">service@wanderlust.com</div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-md-7 form-panel text-start">
-                            <form id="contactForm">
-                                <div class="mb-3">
+                        <div class="col-md-7 form-section text-start">
+                            <form id="consultationForm">
+                                <div class="mb-4">
                                     <label class="form-label fw-bold">您的姓名</label>
-                                    <input type="text" id="userName" class
+                                    <input type="text" id="nameInput" class="form-control form-control-lg" placeholder="請輸入姓名" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">需求描述</label>
+                                    <textarea id="descInput" class="form-control form-control-lg" rows="4" placeholder="請描述您的旅遊需求..." required></textarea>
+                                </div>
+                                <button type="button" id="submitBtn" class="btn btn-primary w-100 py-3 fs-5 fw-bold">送出諮詢</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 py-4 text-center text-muted">
+        <small>© 2025 旅遊趣 Wanderlust Travel. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const name = document.getElementById('nameInput').value;
+            const desc = document.getElementById('descInput').value;
+
+            if (name.trim() === "" || desc.trim() === "") {
+                alert("請填寫姓名與描述後再送出！");
+            } else {
+                // 跳出模擬送出成功的視窗
+                alert("感謝 " + name + " 的諮詢！\n我們已收到您的需求，將於 24 小時內聯絡您。");
+                
+                // 清空表單
+                document.getElementById('nameInput').value = "";
+                document.getElementById('descInput').value = "";
+            }
+        });
+    </script>
+</body>
+</html>
