@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>熱門票券行程 | 旅遊趣 Wanderlust</title>
+    <title>探索熱門票券行程 | 旅遊趣</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .ticket-card { transition: all 0.3s; border: none; border-radius: 15px; }
-        .ticket-card:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
-        .category-pill { cursor: pointer; transition: 0.3s; }
-        .category-pill:hover { background-color: #0d6efd; color: white; }
+        .ticket-card { transition: 0.3s; border: none; border-radius: 20px; }
+        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+        .ticket-img-container { width: 200px; height: 150px; overflow: hidden; border-radius: 15px; }
+        .ticket-img-container img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body class="bg-light">
@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">返回首頁</a></li>
                     <li class="nav-item"><a class="nav-link active" href="tickets.html">票券行程</a></li>
@@ -26,79 +26,64 @@
         </div>
     </nav>
 
-    <div class="container py-5">
-        <div class="row mb-5 text-center">
-            <div class="col-12">
-                <h2 class="fw-bold mb-3">探索熱門票券行程</h2>
-                <p class="text-muted">即買即用，電子憑證快速入場，讓您的行程安排更彈性。</p>
-            </div>
+    <div class="container py-5 text-center">
+        <h2 class="fw-bold mb-3">探索熱門票券行程</h2>
+        <p class="text-muted mb-5">即買即用，電子憑證快速入場，讓您的行程安排更彈性。</p>
+
+        <div class="d-flex justify-content-center gap-2 mb-5">
+            <button class="btn btn-primary rounded-pill px-4">全部</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4">樂園門票</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4">交通接駁</button>
         </div>
 
-        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
-            <span class="badge rounded-pill bg-primary px-3 py-2 category-pill">全部</span>
-            <span class="badge rounded-pill bg-white text-dark border px-3 py-2 category-pill">樂園門票</span>
-            <span class="badge rounded-pill bg-white text-dark border px-3 py-2 category-pill">交通接駁</span>
-            <span class="badge rounded-pill bg-white text-dark border px-3 py-2 category-pill">在地體驗</span>
-            <span class="badge rounded-pill bg-white text-dark border px-3 py-2 category-pill">美食餐廳</span>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="card ticket-card shadow-sm h-100 p-3">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-4">
-                            <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=300&q=80" class="img-fluid rounded-3" alt="JR Pass">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-10">
+                <div class="card ticket-card shadow-sm p-3">
+                    <div class="d-flex align-items-center flex-column flex-md-row text-start">
+                        <div class="ticket-img-container mb-3 mb-md-0">
+                            <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=400&q=80" alt="JR Pass">
                         </div>
-                        <div class="col-8">
-                            <div class="card-body">
-                                <span class="badge bg-info-subtle text-info mb-2">交通票券</span>
-                                <h5 class="card-title fw-bold">JR Pass 全日本鐵路周遊券</h5>
-                                <p class="card-text small text-muted">7/14/21日，暢遊日本必備，搭乘新幹線首選。</p>
-                                <div class="d-flex justify-content-between align-items-end">
-                                    <div class="text-danger fw-bold fs-5">NT$ 11,500 <small class="text-muted fw-normal fs-6">/人</small></div>
-                                    <button class="btn btn-primary btn-sm rounded-pill">立即選購</button>
-                                </div>
+                        <div class="ms-md-4 flex-grow-1">
+                            <span class="badge bg-info-subtle text-info mb-2">交通票券</span>
+                            <h5 class="fw-bold">JR Pass 全日本鐵路周遊券</h5>
+                            <p class="text-muted small">7/14/21日，暢遊日本必備，搭乘新幹線首選。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="text-danger fw-bold mb-0">NT$ 11,500 <small class="text-muted">/人</small></h5>
+                                <button class="btn btn-primary rounded-pill px-4">立即選購</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6">
-                <div class="card ticket-card shadow-sm h-100 p-3">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-4">
-                            <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=300&q=80" class="img-fluid rounded-3" alt="Tokyo Skytree">
+            <div class="col-lg-10 mt-4">
+                <div class="card ticket-card shadow-sm p-3">
+                    <div class="d-flex align-items-center flex-column flex-md-row text-start">
+                        <div class="ticket-img-container mb-3 mb-md-0">
+                            <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=400&q=80" alt="Tokyo Skytree">
                         </div>
-                        <div class="col-8">
-                            <div class="card-body">
-                                <span class="badge bg-success-subtle text-success mb-2">在地體驗</span>
-                                <h5 class="card-title fw-bold">東京晴空塔門票 (免排隊)</h5>
-                                <p class="card-text small text-muted">登上 450 公尺展望台，俯瞰整個東京絕美天際線。</p>
-                                <div class="d-flex justify-content-between align-items-end">
-                                    <div class="text-danger fw-bold fs-5">NT$ 650 <small class="text-muted fw-normal fs-6">/人</small></div>
-                                    <button class="btn btn-primary btn-sm rounded-pill">立即選購</button>
-                                </div>
+                        <div class="ms-md-4 flex-grow-1">
+                            <span class="badge bg-success-subtle text-success mb-2">在地體驗</span>
+                            <h5 class="fw-bold">東京晴空塔門票 (免排隊)</h5>
+                            <p class="text-muted small">登上 450 公尺展望台，俯瞰整個東京絕美天際線。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="text-danger fw-bold mb-0">NT$ 650 <small class="text-muted">/人</small></h5>
+                                <button class="btn btn-primary rounded-pill px-4">立即選購</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <nav class="mt-5">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
-          </ul>
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="index.html">回首頁</a></li>
+            </ul>
         </nav>
     </div>
-
-    <footer class="bg-dark text-light py-4 text-center mt-5">
-        <p class="small mb-0">© 2025 旅遊趣 Wanderlust Travel. All rights reserved.</p>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
