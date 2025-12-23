@@ -7,54 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background: #f0f2f5; height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .register-card { background: white; border-radius: 15px; padding: 40px; width: 100%; max-width: 450px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .reg-card { background: white; border-radius: 15px; padding: 40px; width: 100%; max-width: 420px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
-
-    <div class="register-card text-center">
-        <h2 class="fw-bold mb-3 text-primary">加入會員</h2>
-        <p class="text-muted mb-4 small">填寫基本資料，開啟您的全球旅程</p>
-        
-        <form id="registerForm">
-            <div class="mb-3 text-start">
-                <label class="form-label fw-bold small">電子郵件</label>
-                <input type="email" id="regEmail" class="form-control" placeholder="example@mail.com" required>
-            </div>
-            <div class="mb-3 text-start">
-                <label class="form-label fw-bold small">設定密碼</label>
-                <input type="password" id="regPass" class="form-control" placeholder="請設定 6 位以上密碼" required>
-            </div>
-            <div class="mb-4 text-start">
-                <label class="form-label fw-bold small">確認密碼</label>
-                <input type="password" id="confirmPass" class="form-control" placeholder="再次輸入密碼" required>
-            </div>
-            
-            <button type="button" class="btn btn-primary w-100 py-2 fw-bold mb-3" onclick="handleRegister()">立即註冊</button>
-            
-            <div class="small">
-                已經有帳號了？ <a href="login.html" class="text-decoration-none fw-bold">點此登入</a>
-            </div>
-        </form>
+    <div class="reg-card text-center">
+        <h2 class="fw-bold mb-4 text-primary">加入會員</h2>
+        <div class="mb-3 text-start">
+            <label class="form-label fw-bold small">電子郵件</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="請輸入 Email">
+        </div>
+        <div class="mb-3 text-start">
+            <label class="form-label fw-bold small">密碼</label>
+            <input type="password" id="regPass" class="form-control" placeholder="請設定密碼">
+        </div>
+        <button type="button" class="btn btn-success w-100 py-2 fw-bold mb-3" onclick="doRegister()">完成註冊</button>
+        <div class="small">
+            已經有帳號了？ <a href="login.html" class="text-decoration-none fw-bold">點此登入</a>
+        </div>
     </div>
 
     <script>
-        function handleRegister() {
-            const email = document.getElementById('regEmail').value;
-            const pass = document.getElementById('regPass').value;
-            const confirm = document.getElementById('confirmPass').value;
-
-            if (email === "" || pass === "") {
-                alert("請填寫所有欄位！");
-                return;
-            }
-            if (pass !== confirm) {
-                alert("兩次輸入的密碼不一致！");
-                return;
-            }
-            
-            alert("註冊成功！歡迎加入旅遊趣，現在將為您跳轉至登入頁面。");
-            // 註冊成功後跳轉到登入頁
+        function doRegister() {
+            alert("註冊成功！請使用新帳號重新登入。");
             window.location.href = "login.html";
         }
     </script>
