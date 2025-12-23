@@ -14,15 +14,17 @@
             transition: 0.3s; 
             background: white;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .ticket-card:hover { 
             transform: translateY(-8px); 
             box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important; 
         }
-        /* 固定圖片比例，解決消失問題 */
+        /* 統一圖片高度與比例，解決截圖中圖片大小不一的問題 */
         .img-box {
             width: 100%;
-            height: 220px;
+            height: 250px; 
             overflow: hidden;
         }
         .img-box img {
@@ -30,11 +32,10 @@
             height: 100%;
             object-fit: cover;
         }
-        .price-text { color: #dc3545; font-size: 1.5rem; font-weight: bold; }
-        .btn-buy { border-radius: 50px; padding: 10px 25px; font-weight: bold; }
+        .price-text { color: #dc3545; font-size: 1.4rem; font-weight: bold; }
     </style>
 </head>
-<body>
+<body class="bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
@@ -51,49 +52,47 @@
         <p class="text-muted mb-5">即買即用，電子憑證免排隊，享受最流暢的旅程。</p>
 
         <div class="row g-4 justify-content-center">
-            <div class="col-md-6 col-lg-5">
+            
+            <div class="col-md-6">
                 <div class="card ticket-card shadow-sm h-100">
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=800&q=80" alt="JR Pass">
                     </div>
-                    <div class="card-body text-start p-4">
-                        <span class="badge bg-info-subtle text-info mb-2">交通票券</span>
+                    <div class="card-body text-start p-4 d-flex flex-column">
+                        <span class="badge bg-info-subtle text-info mb-2" style="width: fit-content;">交通票券</span>
                         <h4 class="fw-bold mb-3">JR Pass 全日本鐵路周遊券</h4>
-                        <p class="text-muted small mb-4">7/14/21日，暢遊日本必備，一張票搞定全日交通，包含新幹線。</p>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <p class="text-muted small flex-grow-1">7/14/21日，暢遊日本必備，一張票搞定全日交通，包含所有新幹線路線。</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
                             <div class="price-text">NT$ 11,500 <small class="fs-6 text-muted">/人</small></div>
-                            <button type="button" class="btn btn-primary btn-buy" onclick="handleSelect('JR Pass')">立即選購</button>
+                            <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold" onclick="handleOrder('JR Pass')">立即選購</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-5">
+            <div class="col-md-6">
                 <div class="card ticket-card shadow-sm h-100">
                     <div class="img-box">
-                        <img src="https://lurl.cc/3EQnzq">
-                    <div class="card-body text-start p-4">
-                        <span class="badge bg-success-subtle text-success mb-2">景點門票</span>
+                        <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=800&q=80" alt="Tokyo Skytree">
+                    </div>
+                    <div class="card-body text-start p-4 d-flex flex-column">
+                        <span class="badge bg-success-subtle text-success mb-2" style="width: fit-content;">在地體驗</span>
                         <h4 class="fw-bold mb-3">東京晴空塔門票 (免排隊)</h4>
-                        <p class="text-muted small mb-4">登上 450 公尺展望台，俯瞰整個東京絕美天際線，天氣好可見富士山。</p>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <p class="text-muted small flex-grow-1">登上 450 公尺展望台，俯瞰整個東京絕美天際線，天氣晴朗時更可遠眺富士山。</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
                             <div class="price-text">NT$ 650 <small class="fs-6 text-muted">/人</small></div>
-                            <button type="button" class="btn btn-primary btn-buy" onclick="handleSelect('東京晴空塔門票')">立即選購</button>
+                            <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold" onclick="handleOrder('東京晴空塔門票')">立即選購</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mt-5">
-            <a href="index.html" class="btn btn-outline-secondary px-5 py-2 rounded-pill">返回首頁</a>
         </div>
     </div>
 
     <script>
-        function handleSelect(name) {
-            alert("您已選擇：" + name + "\n將為您跳轉至諮詢表單。");
-            // 點擊後跳轉到聯絡我們頁面，解決「按不了」的問題
+        function handleOrder(name) {
+            alert("您已選擇：" + name + "\n將為您跳轉至諮詢頁面。");
             window.location.href = "contact.html";
         }
     </script>
