@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 | 旅遊趣 Wanderlust</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #0066cc; }
+        .about-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; height: 40vh;
+            display: flex; align-items: center; color: white;
+        }
+        .feature-icon {
+            font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html"> 旅遊趣 Wanderlust</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">返回首頁</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">關於我們</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="about-header text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">我們的故事</h1>
+            <p class="lead">讓每一次旅行，都成為人生中難忘的扉頁。</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">為什麼選擇旅遊趣？</h2>
+                    <p class="text-muted lh-lg">
+                        創立於 2025 年，旅遊趣 Wanderlust 致力於打破傳統旅遊的框架。我們相信旅行不只是走馬看花，而是一場與世界的深度對話。
+                        不論是精選的團體旅遊、高彈性的自由行，或是各類便利的票券行程，我們都以「安心、專業、驚喜」為核心目標，為您打造完美的旅行體驗。
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-lg" alt="關於我們圖片">
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-5 text-center">
+                <div class="col-md-4">
+                    <div class="feature-icon">🌟</div>
+                    <h4 class="fw-bold">專業顧問</h4>
+                    <p class="text-muted">深耕旅遊產業多年，提供最精準的行程建議與在地資訊。</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon">🛡️</div>
+                    <h4 class="fw-bold">安心保障</h4>
+                    <p class="text-muted">全天候緊急客服支援，讓您的旅程無後顧之憂。</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon">📍</div>
+                    <h4 class="fw-bold">精選景點</h4>
+                    <p class="text-muted">嚴選全球特色景點，帶您深入體驗最地道的文化色彩。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4 text-center">
+        <div class="container">
+            <p class="mb-0">© 2025 旅遊趣 Wanderlust Travel. All rights reserved.</p>
+            <div class="mt-2 small text-secondary">
+                <a href="index.html" class="text-secondary text-decoration-none mx-2">首頁</a> | 
+                <a href="tickets.html" class="text-secondary text-decoration-none mx-2">票券行程</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
