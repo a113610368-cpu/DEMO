@@ -3,38 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>會員登入 | 旅遊趣</title>
+    <title>會員登入 | 旅遊趣 Wanderlust</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #f4f7f6; height: 100vh; display: flex; align-items: center; }
-        .login-card { border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        body {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-5 col-lg-4">
-                <div class="card login-card p-4">
-                    <div class="card-body">
-                        <h3 class="fw-bold text-center mb-4 text-primary">會員登入</h3>
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label">電子郵件</label>
-                                <input type="email" class="form-control" placeholder="example@mail.com">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">密碼</label>
-                                <input type="password" class="form-control" placeholder="請輸入密碼">
-                            </div>
-                            <button type="button" class="btn btn-primary w-100 py-2 fw-bold mb-3">登入</button>
-                            <div class="text-center">
-                                <a href="index.html" class="text-decoration-none small text-muted">← 返回首頁</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
+    <div class="login-card text-center">
+        <h2 class="fw-bold mb-4 text-primary">會員登入</h2>
+        <p class="text-muted mb-4 text-start small">歡迎回到旅遊趣，請輸入您的帳號密碼開始探索。</p>
+        
+        <form id="loginForm">
+            <div class="mb-3 text-start">
+                <label class="form-label fw-bold small">電子郵件</label>
+                <input type="email" id="email" class="form-control" placeholder="example@mail.com" required>
             </div>
-        </div>
+            <div class="mb-4 text-start">
+                <label class="form-label fw-bold small">密碼</label>
+                <input type="password" id="password" class="form-control" placeholder="請輸入密碼" required>
+            </div>
+            <button type="button" id="loginBtn" class="btn btn-primary w-100 py-2 fw-bold mb-3">立即登入</button>
+            <div class="d-flex justify-content-between">
+                <a href="#" class="text-decoration-none small text-secondary">忘記密碼？</a>
+                <a href="index.html" class="text-decoration-none small text-primary fw-bold">← 返回首頁</a>
+            </div>
+        </form>
     </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // 簡易驗證邏輯
+            if (email.trim() === "" || password.trim() === "") {
+                alert("請填寫帳號與密碼！");
+            } else {
+                // 模擬登入成功提示
+                alert("登入成功！歡迎回來 " + email);
+                // 成功後自動跳轉回首頁 index.html
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
