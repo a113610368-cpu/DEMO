@@ -3,65 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>熱門票券行程 | 旅遊趣 Wanderlust</title>
+    <title>熱門票券行程 | 旅遊趣</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --primary-blue: #0066cc; }
-        .ticket-card { transition: 0.3s; border: none; border-radius: 20px; overflow: hidden; background: white; }
-        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important; }
-        .ticket-img-container { width: 100%; max-width: 280px; height: 200px; overflow: hidden; border-radius: 15px; position: relative; }
-        .ticket-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .ticket-card { border: none; border-radius: 15px; transition: 0.3s; background: white; }
+        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+        .ticket-img { width: 100%; max-width: 250px; height: 180px; object-fit: cover; border-radius: 12px; }
+        /* 確保按鈕滑鼠移上去有手型 */
+        .btn-buy { cursor: pointer; position: relative; z-index: 5; }
     </style>
 </head>
-<body class="bg-light text-start">
+<body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
             <div class="ms-auto">
-                <a href="index.html" class="btn btn-link text-decoration-none text-dark">首頁</a>
-                <a href="free-trip.html" class="btn btn-outline-primary btn-sm ms-2">自由行</a>
+                <a href="index.html" class="btn btn-sm btn-outline-secondary">回首頁</a>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3">熱門票券與在地體驗</h2>
-            <p class="text-muted">即買即用，電子憑證免排隊，享受最流暢的旅程。</p>
-        </div>
+    <div class="container py-4 text-center">
+        <h2 class="fw-bold mb-5">探索熱門票券行程</h2>
 
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-11">
+            <div class="col-lg-10">
                 <div class="card ticket-card shadow-sm p-3">
-                    <div class="d-flex align-items-center flex-column flex-md-row">
-                        <div class="ticket-img-container mb-3 mb-md-0">
-                            <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=600&q=80" alt="JR Pass">
-                        </div>
+                    <div class="d-flex align-items-center flex-column flex-md-row text-start">
+                        <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=400&q=80" class="ticket-img">
                         <div class="ms-md-4 flex-grow-1">
-                            <h4 class="fw-bold mb-2">JR Pass 全日本鐵路周遊券</h4>
-                            <p class="text-muted small mb-3">7/14/21日，暢遊日本必備，一張票搞定全日交通。</p>
+                            <h4 class="fw-bold mt-2">JR Pass 全日本鐵路周遊券</h4>
+                            <p class="text-muted">日本旅行必備，暢遊各大城市最划算的選擇。</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="text-danger fw-bold mb-0">NT$ 11,500 <small class="fs-6 text-muted">/人</small></h4>
-                                <button type="button" class="btn btn-primary rounded-pill px-4 buy-btn">立即選購</button>
+                                <h4 class="text-danger fw-bold mb-0">NT$ 11,500</h4>
+                                <button type="button" class="btn btn-primary rounded-pill px-4 btn-buy" onclick="buyTicket('JR Pass 全日本鐵路周遊券')">立即選購</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-11 mt-4">
-                <div class="card ticket-card shadow-sm p-3">
-                    <div class="d-flex align-items-center flex-column flex-md-row">
-                        <div class="ticket-img-container mb-3 mb-md-0">
-                            <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=600&q=80" alt="Tokyo Skytree">
-                        </div>
+            <div class="col-lg-10">
+                <div class="card ticket-card shadow-sm p-3 mt-3">
+                    <div class="d-flex align-items-center flex-column flex-md-row text-start">
+                        <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=400&q=80" class="ticket-img">
                         <div class="ms-md-4 flex-grow-1">
-                            <h4 class="fw-bold mb-2">東京晴空塔門票 (免排隊)</h4>
-                            <p class="text-muted small mb-3">登上 450 公尺展望台，俯瞰整個東京絕美天際線。</p>
+                            <h4 class="fw-bold mt-2">東京晴空塔門票 (免排隊)</h4>
+                            <p class="text-muted">登上東京第一高塔，俯瞰 360 度絕美夜景。</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="text-danger fw-bold mb-0">NT$ 650 <small class="fs-6 text-muted">/人</small></h4>
-                                <button type="button" class="btn btn-primary rounded-pill px-4 buy-btn">立即選購</button>
+                                <h4 class="text-danger fw-bold mb-0">NT$ 650</h4>
+                                <button type="button" class="btn btn-primary rounded-pill px-4 btn-buy" onclick="buyTicket('東京晴空塔門票')">立即選購</button>
                             </div>
                         </div>
                     </div>
@@ -71,19 +63,13 @@
     </div>
 
     <script>
-        // 選取所有具備 buy-btn 類別的按鈕
-        const buttons = document.querySelectorAll('.buy-btn');
-        
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                // 獲取按鈕所在卡片的標題
-                const title = this.closest('.card').querySelector('h4').innerText;
-                alert('您已成功選購：' + title + '\n請前往「聯絡我們」頁面確認訂單詳情！');
-                // 可選：自動跳轉到聯絡頁面
-                // window.location.href = 'contact.html';
-            });
-        });
+        function buyTicket(ticketName) {
+            console.log("按鈕已被點擊：" + ticketName); // 用於檢查控制台
+            alert("【訂購成功】\n您已選擇：" + ticketName + "\n請前往「聯絡我們」填寫詳細資料，我們將儘速處理您的訂單。");
+        }
     </script>
+</body>
+</html>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
