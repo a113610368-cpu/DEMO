@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>探索熱門票券行程 | 旅遊趣</title>
+    <title>探索熱門票券行程 | 旅遊趣 Wanderlust</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .ticket-card { transition: 0.3s; border: none; border-radius: 20px; }
-        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
-        .ticket-img-container { width: 200px; height: 150px; overflow: hidden; border-radius: 15px; }
-        .ticket-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .ticket-card { transition: 0.3s; border: none; border-radius: 20px; overflow: hidden; }
+        .ticket-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important; }
+        .ticket-img-container { width: 100%; max-width: 250px; height: 180px; overflow: hidden; border-radius: 15px; }
+        .ticket-img-container img { width: 100%; height: 100%; object-fit: cover; background-color: #f0f0f0; }
+        /* 確保按鈕在最上層可被點擊 */
+        .btn-select { position: relative; z-index: 10; }
     </style>
 </head>
 <body class="bg-light">
@@ -17,11 +19,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">返回首頁</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="tickets.html">票券行程</a></li>
-                </ul>
+            <div class="ms-auto">
+                <a href="index.html" class="btn btn-outline-secondary btn-sm">返回首頁</a>
+                <a href="tickets.html" class="btn btn-primary btn-sm ms-2">票券行程</a>
             </div>
         </div>
     </nav>
@@ -38,18 +38,18 @@
 
         <div class="row g-4 justify-content-center">
             <div class="col-lg-10">
-                <div class="card ticket-card shadow-sm p-3">
+                <div class="card ticket-card shadow-sm p-4">
                     <div class="d-flex align-items-center flex-column flex-md-row text-start">
                         <div class="ticket-img-container mb-3 mb-md-0">
-                            <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=400&q=80" alt="JR Pass">
+                            <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=600&q=80" alt="JR Pass">
                         </div>
                         <div class="ms-md-4 flex-grow-1">
                             <span class="badge bg-info-subtle text-info mb-2">交通票券</span>
-                            <h5 class="fw-bold">JR Pass 全日本鐵路周遊券</h5>
-                            <p class="text-muted small">7/14/21日，暢遊日本必備，搭乘新幹線首選。</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="text-danger fw-bold mb-0">NT$ 11,500 <small class="text-muted">/人</small></h5>
-                                <button class="btn btn-primary rounded-pill px-4">立即選購</button>
+                            <h5 class="fw-bold fs-4">JR Pass 全日本鐵路周遊券</h5>
+                            <p class="text-muted">7/14/21日，暢遊日本必備，搭乘新幹線首選。</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <h4 class="text-danger fw-bold mb-0">NT$ 11,500 <small class="fs-6 text-muted">/人</small></h4>
+                                <button class="btn btn-primary rounded-pill px-4 btn-select" onclick="alert('已選購！')">立即選購</button>
                             </div>
                         </div>
                     </div>
@@ -57,18 +57,18 @@
             </div>
 
             <div class="col-lg-10 mt-4">
-                <div class="card ticket-card shadow-sm p-3">
+                <div class="card ticket-card shadow-sm p-4">
                     <div class="d-flex align-items-center flex-column flex-md-row text-start">
                         <div class="ticket-img-container mb-3 mb-md-0">
-                            <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=400&q=80" alt="Tokyo Skytree">
+                            <img src="https://images.unsplash.com/photo-1540959733332-e94e270b2d42?auto=format&fit=crop&w=600&q=80" alt="Tokyo Skytree">
                         </div>
                         <div class="ms-md-4 flex-grow-1">
                             <span class="badge bg-success-subtle text-success mb-2">在地體驗</span>
-                            <h5 class="fw-bold">東京晴空塔門票 (免排隊)</h5>
-                            <p class="text-muted small">登上 450 公尺展望台，俯瞰整個東京絕美天際線。</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="text-danger fw-bold mb-0">NT$ 650 <small class="text-muted">/人</small></h5>
-                                <button class="btn btn-primary rounded-pill px-4">立即選購</button>
+                            <h5 class="fw-bold fs-4">東京晴空塔門票 (免排隊)</h5>
+                            <p class="text-muted">登上 450 公尺展望台，俯瞰整個東京絕美天際線。</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <h4 class="text-danger fw-bold mb-0">NT$ 650 <small class="fs-6 text-muted">/人</small></h4>
+                                <button class="btn btn-primary rounded-pill px-4 btn-select" onclick="alert('已選購！')">立即選購</button>
                             </div>
                         </div>
                     </div>
@@ -78,12 +78,15 @@
 
         <nav class="mt-5">
             <ul class="pagination justify-content-center">
-                <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="index.html">回首頁</a></li>
             </ul>
         </nav>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
