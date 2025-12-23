@@ -24,7 +24,6 @@
         .form-section {
             padding: 60px 40px;
         }
-        .contact-icon { width: 24px; margin-right: 15px; }
     </style>
 </head>
 <body>
@@ -104,9 +103,7 @@
             if (name.trim() === "" || desc.trim() === "") {
                 alert("請填寫姓名與描述後再送出！");
             } else {
-                // 跳出模擬送出成功的視窗
                 alert("感謝 " + name + " 的諮詢！\n我們已收到您的需求，將於 24 小時內聯絡您。");
-                
                 // 清空表單
                 document.getElementById('nameInput').value = "";
                 document.getElementById('descInput').value = "";
