@@ -11,7 +11,7 @@
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80');
             background-size: cover; background-position: center; height: 60vh;
-            display: flex; align-items: center; color: white;
+            display: flex; align-items: center; color: white; text-align: center;
         }
         .search-container {
             background: white; padding: 30px; border-radius: 15px;
@@ -20,41 +20,32 @@
         }
         .card { transition: transform 0.3s ease; border: none; border-radius: 12px; overflow: hidden; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 12px 20px rgba(0,0,0,0.1) !important; }
-        .card-img-top { height: 220px; object-fit: cover; background-color: #f8f9fa; }
+        .card-img-top { height: 220px; object-fit: cover; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="index.html"> 旅遊趣 Wanderlust</a>
+            <a class="navbar-brand fw-bold text-primary" href="index.html">旅遊趣 Wanderlust</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav ms-auto">
-    <li class="nav-item">
-        <a class="nav-link active" href="index.html">首頁</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="about.html">關於我們</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="free-trip.html">自由行</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="tickets.html">票券行程</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="contact.html">聯絡我們</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link btn btn-primary text-white ms-lg-3 px-4" href="login.html">登入 / 註冊</a>
-    </li>
-</ul>
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">關於我們</a></li>
+                    <li class="nav-item"><a class="nav-link" href="free-trip.html">自由行</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tickets.html">票券行程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡我們</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3 px-4" href="login.html">登入 / 註冊</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <section class="hero-section text-center">
-        <div class="container">
+    <section class="hero-section">
+        <div class="container text-center w-100">
             <h1 class="display-3 fw-bold">開啟您的下一段冒險</h1>
             <p class="fs-4">精選全球旅遊行程，打造專屬於您的精彩回憶。</p>
         </div>
@@ -63,45 +54,27 @@
     <div class="container">
         <div class="search-container">
             <form class="row g-3 align-items-end">
-                <div class="col-md-4">
-                    <label class="form-label fw-bold">目的地</label>
-                    <input type="text" class="form-control" placeholder="想去哪裡？">
-                </div>
-                <div class="col-md-3">
-                    <label class="form-label fw-bold">月份</label>
-                    <input type="month" class="form-control">
-                </div>
-                <div class="col-md-3">
-                    <label class="form-label fw-bold">類別</label>
-                    <select class="form-select">
-                        <option selected>全部類型</option>
-                        <option>跟團旅遊</option>
-                        <option>票券行程</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-warning w-100 fw-bold py-2">搜尋</button>
-                </div>
+                <div class="col-md-4"><label class="form-label fw-bold">目的地</label><input type="text" class="form-control" placeholder="想去哪裡？"></div>
+                <div class="col-md-3"><label class="form-label fw-bold">月份</label><input type="month" class="form-control"></div>
+                <div class="col-md-3"><label class="form-label fw-bold">類別</label><select class="form-select"><option>全部類型</option><option>跟團</option><option>自由行</option></select></div>
+                <div class="col-md-2"><button type="submit" class="btn btn-warning w-100 fw-bold">搜尋</button></div>
             </form>
         </div>
     </div>
 
     <section class="py-5">
         <div class="container mt-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="fw-bold">熱門目的地推薦</h2>
-                <a href="tickets.html" class="text-decoration-none">查看更多 ></a>
-            </div>
+            <h2 class="fw-bold mb-4 text-center text-md-start">熱門目的地推薦</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="泰國普吉島">
-                        <div class="card-body text-start">
+                        <div class="card-body">
                             <span class="badge bg-success mb-2">超值熱銷</span>
                             <h5 class="card-title fw-bold">泰國普吉島放鬆 5 日</h5>
                             <p class="card-text text-muted small">精選五星級海濱度假村，享受無邊際泳池與泰式按摩。</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-primary fs-5 fw-bold">NT$ 19,900 起</span>
+                                <span class="text-primary fw-bold">NT$ 19,900 起</span>
                                 <a href="detail.html" class="btn btn-outline-primary btn-sm">查看詳情</a>
                             </div>
                         </div>
@@ -111,13 +84,9 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-light py-5">
+    <footer class="bg-dark text-light py-5 mt-5">
         <div class="container text-center">
-            <p class="mb-2">© 2025 旅遊趣 Wanderlust Travel. All rights reserved.</p>
-            <div class="small text-secondary">
-                <a href="about.html" class="text-secondary text-decoration-none mx-2">關於我們</a> | 
-                <a href="contact.html" class="text-secondary text-decoration-none mx-2">聯絡我們</a>
-            </div>
+            <p class="mb-0">© 2025 旅遊趣 Wanderlust Travel. All rights reserved.</p>
         </div>
     </footer>
 
